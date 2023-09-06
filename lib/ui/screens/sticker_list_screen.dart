@@ -15,8 +15,49 @@ class StickerList extends StatefulWidget {
 class StickerListState extends State<StickerList> {
   @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: _appBar(context)
-
+    appBar: _appBar(context),
+    body: Padding(
+      padding: EdgeInsets.all(20),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Morning, Sunny",
+                style: Theme.of(context).textTheme.headlineSmall,
+              ),
+              Text(
+                "What sticker do you want\nto buy today",
+                style: Theme.of(context).textTheme.displayLarge,
+              ),
+              Text(
+                "Available for you",
+                style: Theme.of(context).textTheme.displaySmall,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 25, bottom: 5),
+                child: Row(
+                  mainAxisAlignment:
+                  MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Best stickers of the week",
+                      style: Theme.of(context).textTheme.displaySmall,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 20),
+                      child: Text(
+                        "See all",
+                        style: Theme.of(context).textTheme.headlineMedium?.copyWith( color: AppColor.accent),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
   );
 
   PreferredSizeWidget _appBar(BuildContext context) {
