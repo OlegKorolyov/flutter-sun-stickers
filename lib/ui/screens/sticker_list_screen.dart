@@ -40,6 +40,7 @@ class StickerListState extends State<StickerList> {
                 style: Theme.of(context).textTheme.displaySmall,
               ),
               _categories(),
+              StickerViewList(stickers: AppData.stickers),
               Padding(
                 padding: const EdgeInsets.only(top: 25, bottom: 5),
                 child: Row(
@@ -60,6 +61,7 @@ class StickerListState extends State<StickerList> {
                   ],
                 ),
               ),
+              StickerViewList(stickers: AppData.stickers),
             ],
           ),
         ),
