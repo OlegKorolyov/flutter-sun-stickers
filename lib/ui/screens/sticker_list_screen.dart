@@ -2,6 +2,7 @@ import 'package:badges/badges.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart' hide Badge;
 import 'package:sun_stickers/data/app_data.dart';
+import 'package:sun_stickers/ui/_ui.dart';
 
 import 'package:sun_stickers/ui_kit/_ui_kit.dart';
 
@@ -129,7 +130,7 @@ class StickerListState extends State<StickerList> {
                       borderRadius: BorderRadius.all(Radius.circular(15))
                   ),
                   child: Text(
-                    category.type.name,
+                    category.type.name.firstCapital,
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
                 ),
