@@ -30,6 +30,7 @@ class StickerListState extends State<StickerList> {
                 "What sticker do you want\nto buy today",
                 style: Theme.of(context).textTheme.displayLarge,
               ),
+              _searchBar(),
               Text(
                 "Available for you",
                 style: Theme.of(context).textTheme.displaySmall,
@@ -88,6 +89,18 @@ class StickerListState extends State<StickerList> {
             child: const Icon(Icons.notifications_none, size: 30),),
         )
       ],
+    );
+  }
+
+  Widget _searchBar() {
+    return const Padding(
+      padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+      child: TextField(
+        decoration: InputDecoration(
+            hintText: "Search sticker",
+            prefixIcon: Icon(Icons.search, color: Colors.grey,),
+        ),
+      ),
     );
   }
 }
