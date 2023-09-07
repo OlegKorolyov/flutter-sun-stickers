@@ -35,6 +35,7 @@ class StickerListState extends State<StickerList> {
                 "Available for you",
                 style: Theme.of(context).textTheme.displaySmall,
               ),
+              _categories(),
               Padding(
                 padding: const EdgeInsets.only(top: 25, bottom: 5),
                 child: Row(
@@ -101,6 +102,44 @@ class StickerListState extends State<StickerList> {
             prefixIcon: Icon(Icons.search, color: Colors.grey,),
         ),
       ),
+    );
+  }
+
+  Widget _categories() {
+    return Padding(
+      padding: const EdgeInsets.only(top: 8.0),
+      child: SizedBox(
+        height: 40,
+        child: ListView.separated(
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (_, index) {
+              return GestureDetector(
+                onTap: (){
+                  print('click on category');
+                },
+                child: Container(
+                  width: 100,
+                  alignment: Alignment.center,
+                  decoration: const BoxDecoration(
+                      color: AppColor.accent,
+                      borderRadius: BorderRadius.all(Radius.circular(15))
+                  ),
+                  child: Text(
+                    'Kebab',
+                    style: Theme.of(context).textTheme.headlineMedium,
+                  ),
+                ),
+              );
+            } ,
+            separatorBuilder: (_, __) {
+              return Container(
+                width: 15,
+                height: 30,
+              );
+            },
+            itemCount: 20
+        ),
+      )
     );
   }
 }
