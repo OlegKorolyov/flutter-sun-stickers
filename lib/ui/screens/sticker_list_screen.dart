@@ -1,6 +1,7 @@
 import 'package:badges/badges.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart' hide Badge;
+import 'package:sun_stickers/data/app_data.dart';
 
 import 'package:sun_stickers/ui_kit/_ui_kit.dart';
 
@@ -13,6 +14,8 @@ class StickerList extends StatefulWidget {
 }
 
 class StickerListState extends State<StickerList> {
+  var categories = AppData.categories;
+
   @override
   Widget build(BuildContext context) => Scaffold(
     appBar: _appBar(context),
@@ -113,19 +116,20 @@ class StickerListState extends State<StickerList> {
         child: ListView.separated(
             scrollDirection: Axis.horizontal,
             itemBuilder: (_, index) {
+              final category = categories[index];
               return GestureDetector(
                 onTap: (){
-                  print('click on category');
+                  onCategoryTap(index);
                 },
                 child: Container(
                   width: 100,
                   alignment: Alignment.center,
-                  decoration: const BoxDecoration(
-                      color: AppColor.accent,
+                  decoration: BoxDecoration(
+                      color: category.isSelected ? AppColor.accent : Colors.transparent,
                       borderRadius: BorderRadius.all(Radius.circular(15))
                   ),
                   child: Text(
-                    'Kebab',
+                    category.type.name,
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
                 ),
@@ -137,9 +141,14 @@ class StickerListState extends State<StickerList> {
                 height: 30,
               );
             },
-            itemCount: 20
+            itemCount: categories.length
         ),
       )
     );
+  }
+
+  void onCategoryTap(int selectedIndex) {
+    categories.asMap().forEach((idx, cat) { cat.isSelected = idx == selectedIndex;});
+    setState(() {});
   }
 }
