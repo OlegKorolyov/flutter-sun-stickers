@@ -21,7 +21,7 @@ class StickerViewList extends StatelessWidget {
             Sticker sticker = isReserved ? stickers.reversed.toList()[index] : stickers[index];
             return GestureDetector(
               onTap: (){
-                print("click on card")
+                print("click on card");
               },
               child: Container(
                 width: 160,
