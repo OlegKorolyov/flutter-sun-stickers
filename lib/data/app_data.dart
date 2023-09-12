@@ -213,4 +213,8 @@ class AppData {
     StickerCategory(StickerType.fruit, false),
     StickerCategory(StickerType.other, false),
   ];
+
+  static List<Sticker> cartItems = [stickers[0], stickers[1], stickers[2]];
+
+
 }
