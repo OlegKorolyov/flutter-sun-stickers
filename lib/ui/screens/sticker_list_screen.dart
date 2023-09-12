@@ -61,7 +61,7 @@ class StickerListState extends State<StickerList> {
                   ],
                 ),
               ),
-              StickerViewList(stickers: AppData.stickers),
+              StickerViewList(stickers: AppData.stickers, isReserved: true,),
             ],
           ),
         ),
