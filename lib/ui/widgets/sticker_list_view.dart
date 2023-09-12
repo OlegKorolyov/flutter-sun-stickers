@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../data/_data.dart';
+import '../../ui_kit/_ui_kit.dart';
 
 
 class StickerViewList extends StatelessWidget {
@@ -10,6 +11,7 @@ class StickerViewList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return SizedBox(
       height: 200,
       child: ListView.separated(
@@ -18,8 +20,8 @@ class StickerViewList extends StatelessWidget {
           itemBuilder: (_, index) {
             return Container(
               width: 160,
-              decoration: const BoxDecoration(
-                color: Colors.orange,
+              decoration: BoxDecoration(
+                color: isDark ? AppColor.dark : Colors.white,
                 borderRadius: BorderRadius.all(Radius.circular(20))
               ),
             );

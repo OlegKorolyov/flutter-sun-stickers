@@ -4,6 +4,7 @@ import '_ui_kit.dart';
 class AppTheme {
   const AppTheme._();
   static ThemeData lightTheme = ThemeData(
+    brightness: Brightness.light,
     scaffoldBackgroundColor: AppColor.primaryLight,
     appBarTheme: AppBarTheme(
       backgroundColor: Colors.transparent,
@@ -37,7 +38,8 @@ class AppTheme {
     ),
   );
   static ThemeData darkTheme = ThemeData(
-      scaffoldBackgroundColor: AppColor.primaryDark,
+    brightness: Brightness.dark,
+    scaffoldBackgroundColor: AppColor.primaryDark,
       appBarTheme: AppBarTheme(
         backgroundColor: Colors.transparent,
         elevation: 0,
