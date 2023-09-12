@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sun_stickers/ui/_ui.dart';
 
 class CartScreen extends StatefulWidget {
   const CartScreen({super.key});
@@ -13,6 +14,11 @@ class CartScreenState extends State<CartScreen>{
   Widget build(BuildContext context ) {
     return Scaffold(
       appBar: _appBar(context),
+      body: EmptyWrapper(
+        title: "Empty cart",
+        isEmpty: true,
+        child: Container(),
+      ),
     );
   }
 
@@ -22,6 +28,7 @@ class CartScreenState extends State<CartScreen>{
         "Cart screen",
         style: Theme.of(context).textTheme.displayMedium,
       ),
+
     );
   }
 
