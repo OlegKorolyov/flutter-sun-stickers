@@ -94,7 +94,6 @@ class CartScreenState extends State<CartScreen>{
                   ),
                   const Spacer(),
                   Column(
-
                     children: [
                       CounterButton(
                         onDecrementTap: () {
@@ -128,11 +127,89 @@ class CartScreenState extends State<CartScreen>{
   }
 
   Widget _bottomAppBar() {
-    return BottomAppBar(
-      child: SizedBox(
-        height: 300,
-        child: Container(
-          color: Colors.white,
+    return ClipRRect(
+      borderRadius: const BorderRadius.only(
+        topLeft: Radius.circular(30),
+        topRight: Radius.circular(30),
+      ),
+      child: BottomAppBar(
+        child: SizedBox(
+          height: 250,
+          child: Container(
+            color: Theme.of(context).brightness ==
+                Brightness.dark ? AppColor.dark : Colors.white,
+            child: Padding(
+              padding: const EdgeInsets.all(30),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Subtotal",
+                            style: Theme.of(context).textTheme.headlineSmall,
+                          ),
+                          Text(
+                            "\$111",
+                            style: Theme.of(context).textTheme.headlineMedium,
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 15,),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Taxes",
+                            style: Theme.of(context).textTheme.headlineSmall,
+                          ),
+                          Text(
+                            "\$${5.00}",
+                            style: Theme.of(context).textTheme.headlineMedium,
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 15,),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Total",
+                            style: Theme.of(context).textTheme.headlineSmall,
+                          ),
+                          Text(
+                            "\$${15.00}",
+                            style: AppTextStyle.h2Style.copyWith(color: AppColor.accent,),
+                          )
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 30,),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 45,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 30),
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: const Text("Checkout"),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
         ),
       ),
     );
