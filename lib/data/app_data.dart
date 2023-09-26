@@ -216,5 +216,10 @@ class AppData {
 
   static List<Sticker> cartItems = [stickers[0], stickers[1], stickers[2]];
 
+  static List<Sticker> favoriteItems = [
+    stickers[0]..isFavorite = true,
+    stickers[1]..isFavorite = true,
+    stickers[2]..isFavorite = true
+  ];
 
 }
