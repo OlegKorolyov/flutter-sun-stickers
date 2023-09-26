@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart' hide Badge;
+import 'package:sun_stickers/ui/screens/profile_screen.dart';
 import 'package:sun_stickers/ui_kit/_ui_kit.dart';
 
 import 'ui/_ui.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sunny stickers',
       theme: AppTheme.lightTheme,
-      home: const FavoriteScreen(),
+      home: const ProfileScreen(),
     );
   }
 }
