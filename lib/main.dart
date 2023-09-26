@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sunny stickers',
       theme: AppTheme.lightTheme,
-      home: const ProfileScreen(),
+      home: const StickerDetails(),
     );
   }
 }
