@@ -1,10 +1,11 @@
 import 'package:badges/badges.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart' hide Badge;
-import 'package:sun_stickers/data/app_data.dart';
 import 'package:sun_stickers/ui/_ui.dart';
 
 import 'package:sun_stickers/ui_kit/_ui_kit.dart';
+
+import 'package:sun_stickers/states/_states.dart';
 
 
 class StickerList extends StatefulWidget {
@@ -15,7 +16,7 @@ class StickerList extends StatefulWidget {
 }
 
 class StickerListState extends State<StickerList> {
-  var categories = AppData.categories;
+  var categories = StickerState().categories;
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -40,7 +41,7 @@ class StickerListState extends State<StickerList> {
                 style: Theme.of(context).textTheme.displaySmall,
               ),
               _categories(),
-              StickerViewList(stickers: AppData.stickers),
+              StickerViewList(stickers: StickerState().stickersByCategory),
               Padding(
                 padding: const EdgeInsets.only(top: 25, bottom: 5),
                 child: Row(
@@ -61,7 +62,7 @@ class StickerListState extends State<StickerList> {
                   ],
                 ),
               ),
-              StickerViewList(stickers: AppData.stickers, isReserved: true,),
+              StickerViewList(stickers: StickerState().stickers, isReserved: true,),
             ],
           ),
         ),
