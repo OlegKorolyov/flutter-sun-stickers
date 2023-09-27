@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sun_stickers/ui/screens/_screens.dart';
 import '../../data/_data.dart';
 import '../../ui_kit/_ui_kit.dart';
 
@@ -22,6 +23,9 @@ class StickerViewList extends StatelessWidget {
             return GestureDetector(
               onTap: (){
                 print("click on card");
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => StickerDetails())
+                );
               },
               child: Container(
                 width: 160,

@@ -49,7 +49,9 @@ class StickerDetailsState extends State<StickerDetails> {
     return FloatingActionButton(
       elevation: 0.0,
       backgroundColor: AppColor.accent,
-      onPressed: () {},
+      onPressed: () {
+        Navigator.of(context).pop();
+      },
       child: sticker.isFavorite
           ? const Icon(AppIcon.heart)
           : const Icon(AppIcon.outlinedHeart),
