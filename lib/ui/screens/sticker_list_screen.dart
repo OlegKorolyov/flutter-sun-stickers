@@ -2,6 +2,7 @@ import 'package:badges/badges.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart' hide Badge;
 import 'package:sun_stickers/ui/_ui.dart';
+import 'package:sun_stickers/data/_data.dart';
 
 import 'package:sun_stickers/ui_kit/_ui_kit.dart';
 
@@ -17,6 +18,12 @@ class StickerList extends StatefulWidget {
 
 class StickerListState extends State<StickerList> {
   var categories = StickerState().categories;
+
+  void onCategoryTap(StickerCategory category) async {
+    await StickerState().onCategoryTap(category);
+    setState(() {});
+  }
+
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -123,7 +130,7 @@ class StickerListState extends State<StickerList> {
               final category = categories[index];
               return GestureDetector(
                 onTap: (){
-                  onCategoryTap(index);
+                  onCategoryTap(category);
                 },
                 child: Container(
                   width: 100,
@@ -149,10 +156,5 @@ class StickerListState extends State<StickerList> {
         ),
       )
     );
-  }
-
-  void onCategoryTap(int selectedIndex) {
-    categories.asMap().forEach((idx, cat) { cat.isSelected = idx == selectedIndex;});
-    setState(() {});
   }
 }

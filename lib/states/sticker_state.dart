@@ -18,7 +18,11 @@ class StickerState {
   List<Sticker> get favorite => stickers.where((element) => element.isFavorite).toList();
   ValueNotifier<bool> isLigth = ValueNotifier(true);
 
-  Future<void> onCategoryTap(StickerCategory category) async {}
+  Future<void> onCategoryTap(StickerCategory category) async {
+    categories.map((e) {
+      e.isSelected = e.type == category.type;
+    }).toList();
+  }
   Future<void> onIncreaseQuantityTap(Sticker sticker) async {}
   Future<void> onDecreaseQuantityTa(Sticker sticker) async {}
   Future<void> onAddToCartTap(Sticker sticker) async {}
