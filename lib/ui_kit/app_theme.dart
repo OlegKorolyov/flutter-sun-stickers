@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import '_ui_kit.dart';
 
@@ -41,6 +43,17 @@ class AppTheme {
         backgroundColor: MaterialStateProperty.all<Color>(AppColor.accent,),
       ),
     ),
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      type: BottomNavigationBarType.fixed,
+      backgroundColor: Colors.white60,
+      selectedItemColor: AppColor.accent,
+    ),
+    iconTheme: const IconThemeData(
+      color: Colors.black45,
+    ),
+    bottomAppBarTheme: const BottomAppBarTheme(
+      color: Colors.white,
+    ),
   );
 
 
@@ -81,6 +94,17 @@ class AppTheme {
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all<Color>(AppColor.accent,),
       ),
+    ),
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      type: BottomNavigationBarType.fixed,
+      backgroundColor: AppColor.primaryDark,
+      selectedItemColor: AppColor.accent,
+      unselectedItemColor: Colors.white70,
+    ),
+    iconTheme: const IconThemeData(
+        color: Colors.white),
+    bottomAppBarTheme: const BottomAppBarTheme(
+      color: AppColor.primaryDark,
     ),
   );
 }
