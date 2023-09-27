@@ -22,6 +22,12 @@ class StickerState {
     categories.map((e) {
       e.isSelected = e.type == category.type;
     }).toList();
+    if (category.type == StickerType.all) {
+      stickersByCategory = stickers;
+    } else {
+      stickersByCategory = stickers.where((e) =>
+        e.type == category.type).toList();
+    }
   }
   Future<void> onIncreaseQuantityTap(Sticker sticker) async {}
   Future<void> onDecreaseQuantityTa(Sticker sticker) async {}
